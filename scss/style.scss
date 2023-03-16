@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.wrapper_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.article_grid_item {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  // justify-content: center;
+  align-items: center;
+  & .image_grid {
+    // max-width: 30%;
+    margin: 0 0 20px 0;
+    padding: 0 0 58% 0;
+    // height: 200px;
+    // overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  & .text_grid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    & h2 {
+
+    }
+    & p {
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 1284px) {
+  .article_grid_item {
+    & .image_grid {
+      & img {
+
+      }
+    }
+    & .text_grid {
+      & h2 {
+
+      }
+      & p {
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .article_grid_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    & .image_grid {
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & .text_grid {
+      & h2 {
+
+      }
+      & p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media (max-width: 930px) {
+  .wrapper_grid {
+    display: grid;
+    gap: 1rem;
+  }
+  .article_grid_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    & .image_grid {
+      max-width: 70%;
+      padding: 0% 0% 10px 0;
+      & img {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      }
+    }
+    & .text_grid {
+      & h2 {
+
+      }
+      & p {
+        font-size: 19px;
+      }
+    }
+  }
+}
+@media (max-width: 545px) {
+  .wrapper_grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .article_grid_item {
+    display: flex;
+    & .image_grid {
+      margin: 0 0 0 0;
+      padding: 0% 0% 0% 0;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & .text_grid {
+      & h2 {
+
+      }
+      & p {
+        font-size: 19px;
+      }
+    }
+  }
+}
